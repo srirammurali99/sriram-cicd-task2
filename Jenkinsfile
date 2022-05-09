@@ -6,7 +6,7 @@ node("sriram-master-node") {
     stage('Build docker compose up'){
         steps {
             sh 'docker -version'
-            sh 'docker-compose up -d'
+            sh 'docker-compose up --build -d'
           }
     }
 }
