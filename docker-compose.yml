@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  web:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: sriram-php
+    depends_on:
+      - db
+    volumes:
+      - ./php:/var/www/html/
+    ports:
+      - "5000:80"
+
+  db:
+    container_name: db
+    image: "mysql:8.0.2"
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_password
+      MYSQL_USER: admin 
+      MYSQL_PASSWORD_FILE: /run/secrets/dbuser_password
+    volumes:
+      - ./db-volume:/var/lib/mysql
+    ports:
+      - "6033:3306"
+
+secrets:
+  root_password:
+    external: true
+  dbuser_password:
+    external: true
