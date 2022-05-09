@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'sriram-master-node' }
     stages
     {
         stage('Composing'){
