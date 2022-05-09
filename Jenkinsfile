@@ -4,6 +4,9 @@ node("sriram-master-node") {
         checkout scm  
     }
     stage('Build docker compose up'){
-        app = docker.build("sriram1999/sriram-cicd-task1")
+        steps {
+            sh 'docker -version'
+            sh 'docker-compose up -d'
+          }
     }
 }
