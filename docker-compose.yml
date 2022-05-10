@@ -18,5 +18,5 @@ services:
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'Adminpass19'
     ports:
-      - "3306:3306"
+      - "6033:3306"
 
