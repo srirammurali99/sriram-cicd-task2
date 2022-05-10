@@ -7,8 +7,6 @@ services:
     container_name: sriram-php
     depends_on:
       - db
-    volumes:
-      - ./php:/var/www/html/
     ports:
       - "5000:80"
 
@@ -19,8 +17,6 @@ services:
       MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'Adminpass19'
-    volumes:
-      - ./db-volume:/var/lib/mysql
     ports:
-      - "6033:3306"
+      - "3306:3306"
 
