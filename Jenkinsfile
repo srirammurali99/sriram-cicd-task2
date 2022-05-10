@@ -6,7 +6,7 @@ pipeline {
             steps {
                 checkout scm
                 sh 'docker version'
-                sh 'docker-compose up -d'
+                sh 'docker-compose up --build -d'
             }
         }
     }
