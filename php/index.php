@@ -4,8 +4,7 @@ echo 'Hello from Sriram R M<br/>';
 
 $host = 'db';
 $user = 'admin';
-$password = '#Adminpass19';
-$dbname = "myDB";
+$password = 'Adminpass19';
 
 
 $conn = mysqli_connect($host, $user, $password);
